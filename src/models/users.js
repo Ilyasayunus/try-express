@@ -14,8 +14,17 @@ const createNewUser = (body) => {
                       return dbPool.execute(SQLQuery);
 }
 
+const UpdateUser = (body, id) => {
+    const SQLQuery = `UPDATE users
+                      SET name='${body.name}', email='${body.email}', address='${body.address}'
+                      WHERE id ='${id}'`;
+
+                      return dbPool.execute(SQLQuery);
+}
+
 
 module.exports = {
     getAllUsers,
     createNewUser,
+    UpdateUser,
 }
