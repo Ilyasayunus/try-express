@@ -22,9 +22,16 @@ const UpdateUser = (body, id) => {
                       return dbPool.execute(SQLQuery);
 }
 
+const DeleteUser = (id) => {
+    const SQLQuery = `DELETE FROM users WHERE id='${id}'`;
+
+    return dbPool.execute(SQLQuery);
+}
+
 
 module.exports = {
     getAllUsers,
     createNewUser,
     UpdateUser,
+    DeleteUser,
 }
