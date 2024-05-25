@@ -13,6 +13,7 @@ const app = express();
 
 app.use (MiddlewareLogRequest);
 app.use (express.json());
+app.use('/assets', express.static('public/images'));
 
 app.use('/users',userRoutes);
 
